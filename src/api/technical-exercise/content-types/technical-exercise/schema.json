@@ -1,0 +1,110 @@
+{
+  "kind": "collectionType",
+  "collectionName": "technical_exercises",
+  "info": {
+    "singularName": "technical-exercise",
+    "pluralName": "technical-exercises",
+    "displayName": "Technical exercise",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "majorKey": {
+      "type": "enumeration",
+      "enum": [
+        "C major",
+        "G major",
+        "D major",
+        "A major",
+        "E major",
+        "B major",
+        "F sharp major",
+        "C sharp major",
+        "F major",
+        "B flat major",
+        "E flat major",
+        "A flat major",
+        "D flat major",
+        "G flat major"
+      ],
+      "required": false
+    },
+    "minorKey": {
+      "type": "enumeration",
+      "enum": [
+        "A minor",
+        "E minor",
+        "B minor",
+        "F sharp minor",
+        "C sharp minor",
+        "G sharp minor",
+        "D sharp minor",
+        "D minor",
+        "G minor",
+        "C minor",
+        "F minor",
+        "B flat minor",
+        "E flat minor",
+        "A flat minor"
+      ]
+    },
+    "octaves": {
+      "type": "enumeration",
+      "enum": [
+        "One",
+        "Two",
+        "Three",
+        "Four"
+      ]
+    },
+    "articulation": {
+      "type": "enumeration",
+      "enum": [
+        "Staccato",
+        "Legato"
+      ],
+      "required": true
+    },
+    "intervals": {
+      "type": "enumeration",
+      "enum": [
+        "Thirds",
+        "Fourths",
+        "Fifths",
+        "Sixths",
+        "Sevenths",
+        "Octaves",
+        "Tenths"
+      ]
+    },
+    "repetition": {
+      "type": "integer"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "students": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::student.student",
+      "mappedBy": "technical_exercises"
+    },
+    "practiceGoal": {
+      "type": "blocks",
+      "required": true
+    },
+    "lesson_notes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::lesson-note.lesson-note",
+      "mappedBy": "technical_exercises"
+    }
+  }
+}

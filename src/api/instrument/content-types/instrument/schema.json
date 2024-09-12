@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "instruments",
+  "info": {
+    "singularName": "instrument",
+    "pluralName": "instruments",
+    "displayName": "Instrument"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "instrument": {
+      "type": "enumeration",
+      "enum": [
+        "Piano",
+        "Violin",
+        "Viola",
+        "Cello",
+        "Double Bass",
+        "Flute",
+        "Oboe",
+        "Clarinet",
+        "Bassoon",
+        "Cornet",
+        "Trumpet",
+        "French horn",
+        "Trombone",
+        "Tuba",
+        "Percussion",
+        "Drum kit",
+        "Electric guitar",
+        "Acoustic guitar",
+        "Classical guitar",
+        "Bass guitar",
+        "Ukulele",
+        "Music theory",
+        "GCSE music",
+        "A level music"
+      ],
+      "required": true
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "students": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::student.student",
+      "mappedBy": "instruments"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "students",
+  "info": {
+    "singularName": "student",
+    "pluralName": "students",
+    "displayName": "Student",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "grade": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::grade.grade"
+    },
+    "instruments": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::instrument.instrument",
+      "inversedBy": "students"
+    },
+    "teacher": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::teacher.teacher",
+      "inversedBy": "students"
+    },
+    "adult": {
+      "type": "boolean",
+      "required": true
+    },
+    "contactEmail": {
+      "type": "email",
+      "required": true
+    },
+    "contactNumber": {
+      "type": "biginteger"
+    },
+    "contactName": {
+      "type": "string",
+      "required": true
+    },
+    "technical_exercises": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::technical-exercise.technical-exercise",
+      "inversedBy": "students"
+    },
+    "pieces": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::piece.piece",
+      "mappedBy": "students"
+    },
+    "lesson_notes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::lesson-note.lesson-note",
+      "mappedBy": "students"
+    }
+  }
+}

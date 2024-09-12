@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lesson_notes",
+  "info": {
+    "singularName": "lesson-note",
+    "pluralName": "lesson-notes",
+    "displayName": "Lesson Note"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "pieces": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::piece.piece",
+      "inversedBy": "lesson_notes"
+    },
+    "technical_exercises": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::technical-exercise.technical-exercise",
+      "inversedBy": "lesson_notes"
+    },
+    "students": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::student.student",
+      "inversedBy": "lesson_notes"
+    }
+  }
+}

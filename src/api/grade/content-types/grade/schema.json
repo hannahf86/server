@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "grades",
+  "info": {
+    "singularName": "grade",
+    "pluralName": "grades",
+    "displayName": "Grade"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "grade": {
+      "type": "enumeration",
+      "enum": [
+        "Beginner",
+        "Grade 01",
+        "Grade 02",
+        "Grade 03",
+        "Grade 04",
+        "Grade 05",
+        "Grade 06",
+        "Grade 07",
+        "Grade 08",
+        "Diploma - Level 01",
+        "Diploma - Level 02",
+        "Diploma - Level 03"
+      ],
+      "required": true
+    },
+    "slug": {
+      "type": "uid"
+    }
+  }
+}
